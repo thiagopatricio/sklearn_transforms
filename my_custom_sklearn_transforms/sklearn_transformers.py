@@ -1,5 +1,5 @@
 from sklearn.base import BaseEstimator, TransformerMixin
-from numpy as np
+import numpy as np
 
 
 # All sklearn Transforms must have the `transform` and `fit` methods
@@ -26,7 +26,7 @@ class MediaNotas(BaseException, TransformerMixin):
 
   def media_notas(self, x):
     notas = []
-    notas.append(x['NOTA_DE'])
+    notas.append(x['NOTA_DE']) if x['NOTA_DE']
     notas.append(x['NOTA_EM'])
     notas.append(x['NOTA_MF'])
     notas.append(x['NOTA_GO'])
